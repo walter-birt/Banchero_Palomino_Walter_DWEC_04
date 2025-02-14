@@ -1,0 +1,284 @@
+body{
+  margin: 0;
+  font-family: monospace;
+  font-size: 16px; /* Tamaño base de la fuente */
+  line-height: 1.5; /* Espaciado entre líneas */
+  margin: 0; /* Eliminar márgenes predeterminados */
+  padding: 0; /* Eliminar padding predeterminado */
+  box-sizing: border-box;
+}
+header{
+  background-color: #333333;
+  width: 100%;
+  padding: 10px 0;
+  text-align: center;
+  color:#F0F0F0;
+}
+/* Navegador fecha */
+#navegador-fechas {
+  padding: 1em;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 15px;
+  margin-bottom: 20px;
+  font-size: 18px;
+}
+
+#prev-dia, #next-dia {
+  width: 54px;
+  height: 70px;
+  padding: 9px 21px;
+  justify-content: center;
+  align-items: center;
+  border-radius: 12px;
+  border: 1px solid #302f2f;
+  background: #ebe6df;
+  color: #302f2f;
+}
+
+#prev-dia:hover, #next-dia:hover , #mostrar-mas:hover, #aplicar-filtros:hover {
+ 
+  border: 2px solid #302f2f;
+}
+
+#dia-actual {
+  font-weight: bold;
+  font-size: 20px;
+}
+
+
+.event-card {
+display: flex;
+align-items: center;
+justify-content: flex-start;
+flex-direction: column;
+gap: 10px;
+margin-bottom: 10px;
+width: 250px;
+height: 350px;
+overflow: hidden;
+border: 1px solid #0e0303;
+box-sizing: border-box;
+border-radius: 15px;
+background-color: #FAF3E0;
+box-shadow: 10px 10px 19px;
+}
+.event-card:hover {
+  transform: scale(1.05);
+}
+.event-card img {
+  max-width: 100%; /* Asegura que la imagen no se desborde */
+  height: auto; /* Mantiene las proporciones de la imagen */
+  width: 100%;
+}
+.event-card h3{
+  text-overflow: ellipsis; /* Añade puntos suspensivos */
+  overflow: hidden; /* Evita el desbordamiento */
+  white-space: nowrap; /* Evita que el texto se divida en varias líneas */
+}
+.event-card h3, p {
+  margin: 0;
+  text-align: center; /* Centra el texto */
+  width: 100%; /* Asegura que el texto ocupe todo el ancho del contenedor */
+}
+#event-details {
+  margin-top: 20px;
+  border-top: 2px solid #ddd;
+  padding-top: 20px;
+}
+
+#titulo-eventos{
+  text-align: center;
+}
+
+#event-list{
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  flex-direction: row;
+  justify-content: center;
+  border: 1px solid black;
+  background-color: crimson;
+  padding: 1em;
+  border-radius: 10px;
+  border: 3px solid #4CAF50; /* Color verde */
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3); /* Sombra */
+  margin: 15px;
+
+}
+
+.evento-detalles {
+  display: grid;
+  grid-template-columns: 1fr 1fr; 
+  grid-template-areas: 
+    "imagen info"        
+    "titulo titulo"      
+    "descripcion descripcion"; 
+  gap: 20px;
+  margin: 20px auto;
+  padding: 20px;
+  max-width: 1200px;
+  background-color: #f9f9f9;
+  border: 1px solid #ddd;
+  border-radius: 10px;
+}
+
+
+.evento-detalles img {
+  grid-area: imagen; 
+  width: 100%;
+  height: auto;
+  border-radius: 10px;
+}
+
+.evento-info {
+  grid-area: info; 
+  display: flex;
+  flex-direction: column;
+  gap: 10px; 
+  color: #666;
+  background-color: #F0F4F8 ;
+  border: 1px solid #E0E0E0;
+  border-radius: 10px;
+  align-items: flex-start; 
+  padding: 10px; 
+}
+
+.evento-info p {
+  margin: 0;
+  text-align: left;
+}
+
+.evento-info .label {
+  font-weight: bold;
+  color: #333;
+}
+
+
+.evento-detalles h2 {
+  grid-area: titulo; 
+  font-size: 28px;
+  font-weight: bold;
+  color: #333;
+  margin: 0;
+
+}
+
+.evento-descripcion {
+  grid-area: descripcion;
+  font-size: 16px;
+  text-align: justify;
+  grid-column: span 2; /* Hace que ocupe toda la fila en una sola columna */
+  width: 100%; /* Para evitar divisiones raras */
+  margin: 0 auto; /* Centrar */
+}
+
+
+
+/* ------------ filtros -------------- */
+.filtros {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 20px;
+  align-items: center;
+}
+
+#filtro-ciudad, #filtro-tipo, #filtro-provincia, #filtro-fecha{
+  padding: 2.6px;
+  font-size: 14px;
+}
+
+.event-card button.favorito {
+  background-color: #FF6347;
+}
+
+.favoritos-btn {
+  background: none;
+  border: none; 
+  cursor: pointer; 
+  padding: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.favoritos-btn img {
+  width: 40px;
+  height: 40px;
+  transition: transform 0.2s ease-in-out; 
+}
+
+.favoritos-btn img:hover {
+  transform: scale(1.1); /* Efecto de agrandado al pasar el cursor */
+}
+
+.favorito-btn {
+ font-size: 30px;
+  border-radius: 5px;
+  padding: 5px 10px;
+  cursor: pointer;
+  border: none;
+}
+
+.visualizar-mas{
+ display: flex;
+ justify-content: center;
+}
+#mostrar-mas{
+  width: 150px;
+  height: 40px;
+  padding: 9px 21px;
+  justify-content: center;
+  align-items: center;
+  border-radius: 12px;
+  border: 1px solid #302f2f;
+  background: #ebe6df;
+  color: #302f2f;
+}
+#aplicar-filtros{
+  width: 90px;
+  height: 27px;
+  justify-content: center;
+  align-items: center;
+  border-radius: 12px;
+  border: 1px solid #302f2f;
+  background: #ebe6df;
+  color: #302f2f;
+
+}
+
+/* Ocultar elementos con la clase hidden */
+
+.contenedor-ct{
+  margin-left: 2em;
+}
+.contenedor-busqueda{
+  margin: auto;
+  margin-right: 2em;
+}
+
+
+.hidden {
+  display: none !important;
+}
+.contenedor-volver {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  margin-top: 20px; 
+}
+.contenedor-btn-index {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  margin-top: 20px; 
+}
+header a {
+  text-decoration: none;
+  color: inherit; /* Hereda el color del elemento padre */
+  display: inline-block;
+}

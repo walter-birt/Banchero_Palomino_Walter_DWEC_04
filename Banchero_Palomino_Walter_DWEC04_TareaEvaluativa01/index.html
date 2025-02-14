@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Eventos en Euskadi</title>
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+
+<body>
+  <header>
+    <a href="../index.html">
+      <h1>AgendaEus</h1>
+    </a>
+  </header>
+
+  <div id="navegador-fechas">
+    <button id="prev-dia">◀</button>
+    <span id="dia-actual"></span>
+    <button id="next-dia">▶</button>
+  </div>
+  <h2 id="titulo-eventos">Eventos del día</h2>
+  <!-- Filtros -->
+  <div id="filtros-ct" class="filtros">
+    <div class="contenedor-ct">
+      <label for="filtro-ciudad">Ciudad</label>
+      <select id="filtro-ciudad">
+        <option value="">Todos</option>
+      </select>
+      <label for="filtro-tipo">Tipo</label>
+      <select id="filtro-tipo">
+        <option value="">Todos</option>
+      </select>
+    </div>
+    <button id="mostrar-favoritos" class="favoritos-btn">
+      <img id="corazon-icono" src="img/corazon.png" alt="corazon">
+    </button>
+    <div class="contenedor-busqueda">
+      <!-- Filtros por fecha y provincia -->
+      <label for="filtro-fecha">Fecha:</label>
+      <input type="date" id="filtro-fecha" name="filtro-fecha">
+
+      <label for="filtro-provincia">Provincia:</label>
+      <select id="filtro-provincia" name="filtro-provincia">
+        <option value=48>Bizkaia</option>
+        <option value=20>Gipúzkoa</option>
+        <option value=01>Araba</option>
+        <!-- Agrega más provincias si es necesario -->
+      </select>
+
+      <button id="aplicar-filtros">Filtrar</button>
+    </div>
+    <!-- Botón de volver -->
+  </div>
+  <div class="contenedor-volver">
+    <button id="volver-inicio" class="favoritos-btn" style="display: none;">
+      <img src="img/home1.png" alt="Inicio" id="icono-volver">
+      <p>Eventos</p>
+    </button>
+  </div>
+  <!-- Lista de eventos -->
+  <div id="event-list"></div>
+  <div class="visualizar-mas">
+    <button id="mostrar-mas">Mostrar más</button>
+  </div>
+
+  <script type="text/javascript" src="https://code.jquery.com/jquery-latest.js"></script>
+  <script type="module" src="js/ajaxtarea.js"></script>
+</body>
+
+</html>
